@@ -1,0 +1,35 @@
+version: '3'
+
+volumes:
+  db-data:
+
+networks:
+  laravel_site_net:
+
+services:
+  site:
+    volumes:
+      - .:/var/www/html
+      - ./config/vhost.conf:/etc/apache2/sites-available/000-default.conf
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/site/public
+    ports:
+      - 80:80
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - laravel_site_net
+
+  db:
+    image:  mysql:5.7
+    volumes:
+      - db-data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD={rootpassword}
+      - MYSQL_USER=laravel
+      - MYSQL_USER_PASSWORD={dbpassword}
+      - MYSQL_DATABASE=laravel
+    networks:
+      - laravel_site_net

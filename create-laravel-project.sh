@@ -40,7 +40,7 @@ else
   mkdir site &&
   cd site &&
 	composer create-project --prefer-dist laravel/laravel . &&
-	cp ./.env .env &&
+	cp ../.env .env &&
 
 	echo "" &&
   echo -e "${GREEN}----------------------------" &&

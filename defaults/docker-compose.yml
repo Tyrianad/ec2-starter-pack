@@ -2,6 +2,7 @@ version: '3'
 
 volumes:
   db-data:
+  storage:
 
 networks:
   laravel_site_net:
@@ -10,6 +11,7 @@ services:
   site:
     volumes:
       - .:/var/www/html
+      - storage:/var/www/html/storage
       - ./config/vhost.conf:/etc/apache2/sites-available/000-default.conf
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html/site/public

@@ -19,7 +19,7 @@ echo "2.UPDATING AND REMOVING OLD VERSIONS" &&
 echo -e "----------------------------${NC}" &&
 echo "" &&
 
-sudo apt-get remove docker docker-engine docker.io &&
+sudo apt-get remove docker docker-engine docker.io
 sudo apt-get update &&
 sudo apt-get upgrade -y &&
 

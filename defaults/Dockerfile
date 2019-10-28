@@ -15,6 +15,6 @@ RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/
 
 COPY site /var/www/html/
 COPY .env /var/www/html/.env
-RUN chmod -R 33:33 /var/www/html/site/storage
+RUN chown -R 33:33 /var/www/html/site/storage
 
 WORKDIR /var/www/html/site

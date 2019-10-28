@@ -1,6 +1,6 @@
 FROM php:7.2-apache
 
-ENV APACHE_DOCUMENT_ROOT /var/www/html/site/public
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
 RUN apt-get update && apt-get install -y                \
         libzip-dev                                      \
@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y                \
 
 RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
 
-COPY site /var/www/html/
+COPY ./site /var/www/html
 COPY .env /var/www/html/.env
 RUN chown -R 33:33 /var/www/html/storage
 
-WORKDIR /var/www/html/site
+WORKDIR /var/www/html

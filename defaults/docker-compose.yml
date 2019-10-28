@@ -10,11 +10,11 @@ networks:
 services:
   site:
     volumes:
-      - .:/var/www/html
+      - ./site:/var/www/html
       - storage:/var/www/html/storage
       - ./config/vhost.conf:/etc/apache2/sites-available/000-default.conf
     environment:
-      - APACHE_DOCUMENT_ROOT=/var/www/html/site/public
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
     ports:
       - 80:80
     build:

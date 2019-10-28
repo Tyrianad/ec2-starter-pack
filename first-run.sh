@@ -75,6 +75,14 @@ sudo apt-get autoremove -y
 
 echo "" &&
 echo -e "${GREEN}----------------------------" &&
-echo "DONE" &&
+echo "DONE, REBOOTING IN 10 SECONDS" &&
 echo -e "----------------------------${NC}" &&
 echo ""
+
+for pc in $(seq 1 10); do
+    echo -ne "${RED}."
+    sleep 1
+done
+
+sudo reboot
+

@@ -31,7 +31,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD={rootpassword}
       - MYSQL_USER=laravel
-      - MYSQL_USER_PASSWORD={dbpassword}
+      - MYSQL_PASSWORD={dbpassword}
       - MYSQL_DATABASE=laravel
     networks:
       - laravel_site_net

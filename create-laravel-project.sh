@@ -52,6 +52,14 @@ else
 
 	echo "" &&
   echo -e "${GREEN}----------------------------" &&
+  echo "5.GENERATING ARTISAN KEY" &&
+  echo -e "----------------------------${NC}" &&
+  echo "" &&
+
+	php artisan key:generate
+
+	echo "" &&
+  echo -e "${GREEN}----------------------------" &&
   echo "DONE" &&
   echo -e "----------------------------${NC}" &&
   echo ""

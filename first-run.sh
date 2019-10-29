@@ -66,7 +66,15 @@ sudo apt-get install composer -y
 
 echo "" &&
 echo -e "${GREEN}----------------------------" &&
-echo "6.CLEANING" &&
+echo "6.VISUAL STUDIO CODE CONFIGURATIONS" &&
+echo -e "----------------------------${NC}" &&
+echo "" &&
+
+sudo echo 'fs.inotify.max_user_watches=524288' >> /proc/sys/fs/inotify/max_user_watches
+
+echo "" &&
+echo -e "${GREEN}----------------------------" &&
+echo "7.CLEANING" &&
 echo -e "----------------------------${NC}" &&
 echo "" &&
 

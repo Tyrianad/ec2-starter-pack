@@ -48,7 +48,7 @@ else
   echo -e "----------------------------${NC}" &&
   echo "" &&
 
-	composer require --dev barryvdh/laravel-ide-helper
+	composer require --dev barryvdh/laravel-ide-helper laravel/ui
 
 	echo "" &&
   echo -e "${GREEN}----------------------------" &&

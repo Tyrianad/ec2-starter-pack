@@ -49,7 +49,7 @@ echo "4.CREATING SWAP" &&
 echo -e "----------------------------${NC}" &&
 echo "" &&
 
-sudo fallocate -l 1G /swapfile &&
+sudo fallocate -l 2G /swapfile &&
 sudo chmod 600 /swapfile &&
 sudo mkswap /swapfile &&
 sudo swapon /swapfile &&
@@ -70,7 +70,7 @@ echo "6.VISUAL STUDIO CODE CONFIGURATIONS" &&
 echo -e "----------------------------${NC}" &&
 echo "" &&
 
-sudo echo 'fs.inotify.max_user_watches=524288' >> /proc/sys/fs/inotify/max_user_watches
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 echo "" &&
 echo -e "${GREEN}----------------------------" &&
